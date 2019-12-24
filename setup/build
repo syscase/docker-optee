@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+root=$(dirname "$(readlink -f "$0")")
+
+source "$root/strict-mode.sh"
+
+su syscase <<'EOF'
+cd ~/optee/syscase
+bash --login -c '
+  rvm use ruby-2.5.0
+  gem install bundler
+  bundle install'
+cd ~/optee
+./build.sh
+EOF
