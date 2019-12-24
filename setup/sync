@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+root=$(dirname "$(readlink -f "$0")")
+
+source "$root/strict-mode.sh"
+
+su syscase <<'EOF'
+cd ~
+mkdir optee
+cd optee
+repo init -u https://github.com/syscase/syscase-optee-manifest.git -b syscase-optee-2.6.0-0.5.0
+repo sync --no-clone-bundle
+EOF
