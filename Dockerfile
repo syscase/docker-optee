@@ -1,5 +1,5 @@
 FROM syscase/optee-base
-LABEL version="2.6.0-0.5.0"
+LABEL version="2.6.0-0.5.0-1"
 USER root
 
 COPY setup/sync /root/setup/sync
